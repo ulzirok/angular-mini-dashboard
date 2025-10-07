@@ -1,0 +1,51 @@
+.create {
+  width: 100%;
+  // outline: 1px solid red;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 0 auto;
+  border-radius: 6px;
+}
+
+.title {
+  font-size: 20px;
+}
+
+textarea {
+  display: block;
+  border: 1px solid var(--color-gray);
+  outline: none;
+  font-size: 16px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  width: 100%;
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.5;
+  background-color: var(--color-white);
+  color: var(--color-dark-blue);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+textarea:focus {
+  border: 1px solid var(--color-blue);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+button {
+  color: var(--color-white);
+  border-radius: 6px;
+  align-self: center;
+  transition: background-color 0.3s;
+  font-size: 20px;
+  line-height: 48px;
+  padding: 0 20px;
+  background-color: var(--color-green);
+  width: 100%;
+  
+  &:hover {
+    background-color: #069348;
+  }
+}
