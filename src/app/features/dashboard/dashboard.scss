@@ -1,0 +1,24 @@
+.dashboard-container {
+  padding: 20px;
+}
+.dashboard-inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.dashboard-inner>* {
+  width: 50%;
+}
+
+@media (max-width: 768px) {
+  .dashboard-inner {
+    flex-direction: column;
+  }
+
+  .dashboard-inner>* {
+    width: 100%;
+  }
+}

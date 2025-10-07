@@ -1,0 +1,28 @@
+
+<div class="modal active">
+  <div class="modal__box">
+    <button class="modal-close-btn" (click)="onClose()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-castom">
+        <line x1="18" y1="6" x2="6" y2="18" stroke="black" stroke-width="2" stroke-linecap="round" />
+        <line x1="6" y1="6" x2="18" y2="18" stroke="black" stroke-width="2" stroke-linecap="round" />
+      </svg>
+    </button>
+    
+    <h2>Редактирование профиля:</h2>
+    <input type="text" placeholder="Изменить ФИО">
+    <input type="text" placeholder="Изменить email">
+    <input type="file">
+    <div class="buttons">
+      <button class="save">Сохранить</button>
+      <button class="cancel">Отмена</button>
+    </div>
+    
+  </div>
+</div>
+
+<!-- <div class="modal" *ngIf="isEditModalOpen">
+  <input type="text" [(ngModel)]="editUser.name">
+  <input type="file" (change)="onFileSelected($event)">
+  <button (click)="saveChanges()">Сохранить</button>
+  <button (click)="closeModal()">Отмена</button>
+</div> -->

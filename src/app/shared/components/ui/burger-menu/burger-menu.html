@@ -1,0 +1,15 @@
+<button (click)="toggleMenu()" [class.active]="isMenuOpen" class="burger-menu__btn">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<div role="button" tabindex="0" (click)="toggleMenu()" [class.active]="isMenuOpen" class="burger-menu">
+  <ul class="burger-menu__list">
+    <li class="burger-menu__item"><a routerLink="dashboard">Dashboard</a></li>
+    <li class="burger-menu__item"><a routerLink="profile">Профиль</a></li>
+    <li class="burger-menu__item"><a routerLink="admin">Админ</a></li>
+    <li class="burger-menu__item"><a routerLink="auth/login">Выйти</a></li>
+  </ul>
+</div>
+
