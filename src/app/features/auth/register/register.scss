@@ -41,13 +41,19 @@ button {
   }
 }
 
-p {
+.text {
   text-align: center;
   transition: 0.3s;
   
   :hover {
     color: var(--color-blue);
   }
+}
+
+.error-text {
+  color: var(--color-red);
+  font-size: 14px;
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {
