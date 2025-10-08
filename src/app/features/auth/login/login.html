@@ -1,11 +1,14 @@
-<form>
+<form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
   <div class="form__item">
-    <input type="text" placeholder="Электронный адрес" name="email" ngModel required>
+    <input formControlName="email" type="text" placeholder="Электронный адрес" name="email">
+    <p *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error-text"><small>Введите действительный эл. адрес</small></p>
   </div>
   <div class="form__item">
-    <input type="password" placeholder="Пароль" name="password" ngModel required>
+    <input formControlName="password" type="password" placeholder="Пароль" name="password">
+    <p *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error-text"><small>Пароль должен содержать хотя бы одну цифру, одну строчную букву, одну заглавную букву</small></p>
   </div>
 
-  <button type="submit" class="login">Вход</button>
+  <button [disabled]="loginForm.invalid" type="submit" class="login">Вход</button>
+  
   <button type="button" routerLink="/auth/register" class="register">Регистрация</button>
 </form>

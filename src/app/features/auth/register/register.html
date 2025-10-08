@@ -1,22 +1,22 @@
-<form>
+<form [formGroup]="registerForm" (ngSubmit)="submitRegister()">
   <h2>Создать новую учетную запись</h2>
   
   <div class="form__item">
-    <input type="text" placeholder="Введите ваше ФИО" ngModel required>
+    <input formControlName="name" type="text" placeholder="Введите ваше ФИО">
+    <p *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched" class="error-text"><small>Как Вас зовут?</small></p>
   </div>
   <div class="form__item">
-    <input type="password" placeholder="Введите Эл. адрес" ngModel required>
+    <input formControlName="email" type="email" placeholder="Введите Эл. адрес">
+    <p *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="error-text"><small>Введите действительный эл. адрес</small></p>
   </div>
   <div class="form__item">
-    <input type="password" placeholder="Придумайте пароль" ngModel required>
-  </div>
-  <div class="form__item">
-    <input type="password" placeholder="Повторите пароль" ngModel required>
+    <input formControlName="password" type="password" placeholder="Придумайте пароль">
+    <p *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="error-text"><small>Пароль должен содержать хотя бы одну цифру, одну строчную букву, одну заглавную букву</small></p>
   </div>
 
-  <button type="submit" class="register">Зарегистрироваться</button>
+  <button [disabled]="registerForm.invalid" type="submit" class="register">Зарегистрироваться</button>
   
-  <p><a routerLink="/auth/login">У вас уже есть аккаунт?</a></p>
+  <p class="text"><a routerLink="/auth/login">У вас уже есть учётная запись?</a></p>
 </form>
 
 

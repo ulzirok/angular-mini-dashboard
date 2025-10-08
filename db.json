@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "id": "ebae",
+      "name": "User User",
+      "email": "user@mail.com",
+      "password": "123QWEasd",
+      "token": "qoefm9wgmb9"
+    }
+  ]
+}
