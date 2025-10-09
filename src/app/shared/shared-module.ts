@@ -4,7 +4,10 @@ import { Post } from './components/post/post';
 import { BurgerMenu } from './components/ui/burger-menu/burger-menu';
 import { AppRoutingModule } from '../app-routing-module';
 import { RouterModule } from '@angular/router';
-import { Modal } from './components/ui/modal/modal';
+import { ModalProfile } from './components/ui/modal/modal-profile';
+import { ModalPost } from './components/ui/modal/modal-post';
+import { DashboardRoutingModule } from '../features/dashboard/dashboard-routing-module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -12,16 +15,20 @@ import { Modal } from './components/ui/modal/modal';
   declarations: [
     Post,
     BurgerMenu,
-    Modal
+    ModalProfile,
+    ModalPost
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    DashboardRoutingModule,
+    FormsModule
   ],
   exports: [
     Post,
     BurgerMenu,
-    Modal
+    ModalProfile,
+    ModalPost
   ]
 })
 export class SharedModule { }

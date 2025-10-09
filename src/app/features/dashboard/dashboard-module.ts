@@ -6,6 +6,7 @@ import { Dashboard } from './dashboard';
 import { CreatePost } from './create-post/create-post';
 import { PostList } from './post-list/post-list';
 import { SharedModule } from '../../shared/shared-module';
+import { ReactiveFormsModule, ɵInternalFormsSharedModule } from "@angular/forms";
 
 
 
@@ -18,7 +19,9 @@ import { SharedModule } from '../../shared/shared-module';
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    SharedModule
-  ]
+    SharedModule,
+    ɵInternalFormsSharedModule,
+    ReactiveFormsModule
+]
 })
 export class DashboardModule { }

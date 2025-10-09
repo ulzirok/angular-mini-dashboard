@@ -1,12 +1,12 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-modal',
+  selector: 'app-modal-profile',
   standalone: false,
-  templateUrl: './modal.html',
-  styleUrls: ['./modal.scss']
+  templateUrl: './modal-profile.html',
+  styleUrls: ['./modal-profile.scss']
 })
-export class Modal {
+export class ModalProfile {
   @Output() close = new EventEmitter() 
   
   onClose() {

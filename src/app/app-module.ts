@@ -12,6 +12,7 @@ import { AuthModule } from './features/auth/auth-module';
 import { SharedModule } from './shared/shared-module';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { authInterceptor } from './core/interceptors/auth-interceptor';
+import { serverMockInterceptor } from './core/interceptors/serverMock-interceptor';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { authInterceptor } from './core/interceptors/auth-interceptor';
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideHttpClient(withInterceptors([authInterceptor]))
+    provideHttpClient(withInterceptors([authInterceptor, serverMockInterceptor]))
   ],
   bootstrap: [App]
 })

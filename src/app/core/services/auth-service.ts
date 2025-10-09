@@ -4,6 +4,7 @@ import { ILoginInfo } from '../../models/loginInfo-model';
 import { map, Observable, switchMap, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { IUser } from '../../models/userInfo-model';
+import { UserService } from './user-service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,8 @@ import { IUser } from '../../models/userInfo-model';
 export class AuthService {
   constructor(
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private userService: UserService
   ) { }
   
   url: string = 'http://localhost:3000/users';
@@ -26,14 +28,25 @@ export class AuthService {
         const loginedUser = users.find(
           (user) => user.email === userInfo.email && user.password === userInfo.password
         );
+        this.setUser(JSON.stringify(loginedUser))
+        if (loginedUser) {
+          this.userService.loginedUser(loginedUser)
+          
+        }
+        
         return loginedUser ? loginedUser : null;
       })
     );
   }
   
-  register(userInfo: ILoginInfo): Observable<IUser> {
+  register(userInfo: IUser): Observable<IUser> {
     const fakeToken = Math.random().toString(36).substring(2);
-    const newUser = { ...userInfo, token: fakeToken };
+    const newUser = {
+      name: userInfo.name,
+      email: userInfo.email,
+      password: userInfo.password,
+      token: fakeToken
+    };
 
     return this.getUser().pipe(
       map(users => {
@@ -46,6 +59,8 @@ export class AuthService {
       switchMap(userToAdd =>
         this.http.post<IUser>(this.url, userToAdd).pipe(
           tap(() => {
+            this.setUser(JSON.stringify(newUser))
+            this.userService.loginedUser(newUser)
             this.setToken(userToAdd.token);
             this.router.navigate(['/dashboard']);
           })
@@ -56,6 +71,10 @@ export class AuthService {
   
   setToken(token: string): void {
     localStorage.setItem('token', token);
+  }
+  
+  setUser(user: string): void {
+    localStorage.setItem('user', user);
   }
   
   getToken() {
