@@ -5,15 +5,15 @@
       <div class="profile">
         <img src="../../../assets/images/snowman.png" alt="Фото для аватара" width="150" height="150">
         <div class="profile__info">
-          <h2 class="title">ФИО: <span>Пердебаева Улзира</span></h2>
-          <p class="title">Почта: <span>ulzirok@gmail.com</span></p>
-          <p class="title">О себе: <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla, facilis.</span></p>
+          <h2 class="title">ФИО: <span>{{userService.user()?.name}}</span> 👤</h2>
+          <p class="title">Почта: <span>{{userService.user()?.email}}</span> 📧</p>
+          <!-- <p class="title">О себе: <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla, facilis.</span></p> -->
         </div>
       </div>
       
       <button (click)="openModal()">Редактировать профиль</button>
       
-      <app-modal *ngIf="isEditModalOpen" (close)="closeModal()"></app-modal>
+      <app-modal-profile *ngIf="isEditModalOpen" (close)="closeModal()"></app-modal-profile>
     </div>
   </div>
 </div>

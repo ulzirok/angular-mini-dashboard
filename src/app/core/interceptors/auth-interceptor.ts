@@ -9,7 +9,6 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
         Authorization: `Bearer ${token}`
       }
     })
-    console.log('🔒 Интерсептор добавил токен:', clonedReq.headers.get('Authorization'));
     return next(clonedReq)
   }
   return next(req);

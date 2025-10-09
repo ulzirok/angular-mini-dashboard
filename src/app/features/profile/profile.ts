@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { UserService } from '../../core/services/user-service';
 
 @Component({
   selector: 'app-profile',
@@ -6,8 +7,13 @@ import { Component } from '@angular/core';
   templateUrl: './profile.html',
   styleUrl: './profile.scss'
 })
-export class Profile {
+export class Profile implements OnInit {
+  userService = inject(UserService)
   isEditModalOpen: boolean = false;
+  
+  ngOnInit(): void {
+    this.userService.user()
+  }
 
   openModal() {
     

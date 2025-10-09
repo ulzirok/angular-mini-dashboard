@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PostService } from '../../../core/services/post-service';
 
 @Component({
   selector: 'app-create-post',
@@ -6,6 +8,20 @@ import { Component } from '@angular/core';
   templateUrl: './create-post.html',
   styleUrl: './create-post.scss'
 })
-export class CreatePost {
-
+export class CreatePost implements OnInit{
+  createPostForm!: FormGroup
+  
+  postService = inject(PostService)
+  fb = inject(FormBuilder)
+  
+  ngOnInit(): void {
+    this.createPostForm = this.fb.group({
+      text: ['', Validators.required]
+    })
+  }
+  
+  submitPost() {
+    this.postService.addPost(this.createPostForm.value)
+    this.createPostForm.reset();
+  }
 }
