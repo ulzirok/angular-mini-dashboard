@@ -2,7 +2,7 @@
 Небольшое модульное Angular-приложение, разработанное для практики **модульного подхода**, **TypeScript**, **Angular Routing**, **Guards**, **Interceptors** и **CRUD**-операций и **REST-запросов**.
 В проекте реализовано взаимодействие с локальными данными (`db.json`) и использованы современные подходы оптимизации, такие как **Lazy Loading**.
 
-## Ссылка на проект: https://github.com/ulzirok/angular-mini-dashboard.git
+## Ссылка на проект: https://ulzirok.github.io/angular-mini-dashboard/auth/login
 
 ---
 
