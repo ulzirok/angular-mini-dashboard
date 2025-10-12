@@ -1,59 +1,54 @@
-# AngularMiniDashboard
+# Mini Dashboard
+Небольшое модульное Angular-приложение, разработанное для практики **модульного подхода**, **TypeScript**, **Angular Routing**, **Guards**, **Interceptors** и **CRUD**-операций и **REST-запросов**.
+В проекте реализовано взаимодействие с локальными данными (`db.json`) и использованы современные подходы оптимизации, такие как **Lazy Loading**.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.4.
+## Ссылка на проект: https://github.com/ulzirok/angular-mini-dashboard.git
 
-## Development server
+---
 
-To start a local development server, run:
+## Функционал
+-  Авторизация и регистрация пользователя (данные сохраняются в `db.json` и `localStorage`);
+-  Профиль пользователя (редактирование данных пользователя);
+-  Dashboard со списком постов (редактирование постов;
+-  CRUD-функционал: получение, добавление, редактирование и удаление записей;
+-  Разделение кода по модулям и компонентам;
+-  Реализована маршрутизация (Routing) между страницами;
+-  Lazy Loading модулей для оптимизации загрузки приложения;
+-  Guard для защиты маршрутов (доступ только авторизованным пользователям);
+-  HTTP Interceptor для автоматического добавления токена к запросам;
+-  Адаптивный интерфейс.
+
+---
+
+## Технологии
+- **Angular 18+**
+- **TypeScript**
+- **HTML / SCSS**
+- **JSON Server (имитация backend)**
+- **ESLint + Prettier**
+
+---
+
+## Установка и запуск
 
 ```bash
+# Клонировать репозиторий
+git clone https://github.com/ulzirok/angular-mini-dashboard.git
+
+# Перейти в папку проекта
+cd angular-mini-dashboard
+
+# Установить зависимости
+npm install
+
+# Запустить Angular-приложение
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+# Запустить JSON Server
+npx json-server --watch db.json --port 3000
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Заметки:
+Проект завершён как учебный, но готов к дальнейшему расширению (Admin page).
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
