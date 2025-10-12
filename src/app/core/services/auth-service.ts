@@ -78,8 +78,8 @@ export class AuthService {
     localStorage.setItem('user', user);
   }
 
-  getToken() {
-    return localStorage.getItem('token');
+  getToken(): string {
+    return localStorage.getItem('token') || '';
   }
 
   isLoggedIn(): boolean {

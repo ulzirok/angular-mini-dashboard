@@ -14,7 +14,9 @@ export class UserService {
   router = inject(Router);
 
   constructor() {
-    const savedUser = localStorage.getItem('user');
+    // const savedUser = localStorage.getItem('user');
+    const userData = localStorage.getItem('user');
+    const savedUser = userData && userData !== 'undefined' ? JSON.parse(userData) : null;
     if (savedUser) {
       this.user.set(JSON.parse(savedUser));
     }
