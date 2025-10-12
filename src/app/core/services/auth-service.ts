@@ -19,7 +19,6 @@ export class AuthService {
   url = 'http://localhost:3000/users';
 
   getUser(): Observable<IUser[]> {
-    //получаем данные из фейк-сервера, так как это фейк-бекенд - мы сами проверяем, сравниваем введенные данные с данными фейк-серверa
     return this.http.get<IUser[]>(this.url);
   }
 
@@ -82,8 +81,7 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    //это для логики authGuard
-    return this.getToken() !== null; //если есть токен - вернет true, если нет токен (null) - false
+    return this.getToken() !== null;
   }
 
   logout() {
