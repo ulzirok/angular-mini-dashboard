@@ -31,23 +31,17 @@ export class UserService {
   
   updateProfile(user: IUser): Observable<IUser> {
     const currentUser = this.user()
-    console.log(currentUser);
     
     if (!currentUser) {
       throw new Error('User not found');
     }
     
     const updatedUser = { ...currentUser!, name: user.name, email: user.email, about: user.about, photo: user.photo }
-    console.log(updatedUser);
-    
-    
     
     return this.http.put<IUser>(`${this.url}/${currentUser.id}`, updatedUser).pipe(
       tap((response) => {
         this.user.set(response)
         localStorage.setItem('user', JSON.stringify(response));
-      
-        console.log(response);
       })
     )
   }

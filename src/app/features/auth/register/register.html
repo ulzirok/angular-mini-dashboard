@@ -10,8 +10,8 @@
     <p *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="error-text"><small>Введите действительный эл. адрес</small></p>
   </div>
   <div class="form__item">
-    <input formControlName="password" type="password" placeholder="Придумайте пароль">
-    <p *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="error-text"><small>Пароль должен содержать хотя бы одну цифру, одну строчную букву, одну заглавную букву</small></p>
+    <input formControlName="fakePassword" type="fakePassword" placeholder="Придумайте пароль">
+    <p *ngIf="registerForm.get('fakePassword')?.invalid && registerForm.get('fakePassword')?.touched" class="error-text"><small>Пароль должен содержать хотя бы одну цифру, одну строчную букву, одну заглавную букву</small></p>
   </div>
 
   <button [disabled]="registerForm.invalid" type="submit" class="register">Зарегистрироваться</button>

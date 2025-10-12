@@ -1,6 +1,28 @@
 {
   "users": [
-    
+    {
+      "id": "ebae",
+      "name": "User User",
+      "email": "user@mail.com",
+      "fakePassword": "123",
+      "token": "qoefm9wgmb9",
+      "about": "Hello everyone! I am a user of this site.",
+      "photo": null
+    },
+    {
+      "id": "b705",
+      "name": "Admin Admin",
+      "email": "admin@mail.com",
+      "fakePassword": "1234",
+      "token": "1317ffyp78v"
+    },
+    {
+      "id": "6974",
+      "name": "Another User",
+      "email": "another@mail.ru",
+      "fakePassword": "12345",
+      "token": "4ozihjq6yrb"
+    }
   ],
   "posts": [
     {

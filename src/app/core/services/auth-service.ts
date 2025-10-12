@@ -26,7 +26,7 @@ export class AuthService {
     return this.getUser().pipe(
       map((users) => {
         const loginedUser = users.find(
-          (user) => user.email === userInfo.email && user.password === userInfo.password
+          (user) => user.email === userInfo.email && user.fakePassword === userInfo.fakePassword
         );
         this.setUser(JSON.stringify(loginedUser))
         if (loginedUser) {
@@ -44,7 +44,7 @@ export class AuthService {
     const newUser = {
       name: userInfo.name,
       email: userInfo.email,
-      password: userInfo.password,
+      fakePassword: userInfo.fakePassword,
       token: fakeToken
     };
 
