@@ -6,22 +6,22 @@ import { PostService } from '../../../core/services/post-service';
   selector: 'app-create-post',
   standalone: false,
   templateUrl: './create-post.html',
-  styleUrl: './create-post.scss'
+  styleUrl: './create-post.scss',
 })
-export class CreatePost implements OnInit{
-  createPostForm!: FormGroup
-  
-  postService = inject(PostService)
-  fb = inject(FormBuilder)
-  
+export class CreatePost implements OnInit {
+  createPostForm!: FormGroup;
+
+  postService = inject(PostService);
+  fb = inject(FormBuilder);
+
   ngOnInit(): void {
     this.createPostForm = this.fb.group({
-      text: ['', Validators.required]
-    })
+      text: ['', Validators.required],
+    });
   }
-  
+
   submitPost() {
-    this.postService.addPost(this.createPostForm.value)
+    this.postService.addPost(this.createPostForm.value);
     this.createPostForm.reset();
   }
 }

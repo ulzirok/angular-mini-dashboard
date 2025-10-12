@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-button',
   standalone: false,
   templateUrl: './button.html',
-  styleUrl: './button.scss'
+  styleUrl: './button.scss',
 })
-export class Button {
-
-}
+export class Button {}

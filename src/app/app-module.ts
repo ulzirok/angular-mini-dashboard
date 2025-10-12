@@ -15,24 +15,12 @@ import { authInterceptor } from './core/interceptors/auth-interceptor';
 import { serverMockInterceptor } from './core/interceptors/serverMock-interceptor';
 
 @NgModule({
-  declarations: [
-    App,
-    Header,
-    Footer,
-    MainLayout,
-    AuthLayout,
-    NotFound
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    AuthModule,
-    SharedModule,
-  ],
+  declarations: [App, Header, Footer, MainLayout, AuthLayout, NotFound],
+  imports: [BrowserModule, AppRoutingModule, AuthModule, SharedModule],
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideHttpClient(withInterceptors([authInterceptor, serverMockInterceptor]))
+    provideHttpClient(withInterceptors([authInterceptor, serverMockInterceptor])),
   ],
-  bootstrap: [App]
+  bootstrap: [App],
 })
-export class AppModule { }
+export class AppModule {}

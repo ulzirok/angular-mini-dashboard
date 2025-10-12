@@ -6,16 +6,16 @@ import { Router } from '@angular/router';
   selector: 'app-header',
   standalone: false,
   templateUrl: './header.html',
-  styleUrl: './header.scss'
+  styleUrl: './header.scss',
 })
 export class Header {
   constructor(
     private authService: AuthService,
-    private router: Router
-  ) { }
-  
+    private router: Router,
+  ) {}
+
   logout() {
-    this.authService.logout()
-    this.router.navigate(['/auth/login'])
+    this.authService.logout();
+    this.router.navigate(['/auth/login']);
   }
 }

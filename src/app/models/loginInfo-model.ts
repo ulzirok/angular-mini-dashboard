@@ -1,4 +1,4 @@
 export interface ILoginInfo {
-  email: string,
-  fakePassword: string
+  email: string;
+  fakePassword: string;
 }

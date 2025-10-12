@@ -5,10 +5,8 @@ import { PostService } from '../../../core/services/post-service';
   selector: 'app-post-list',
   standalone: false,
   templateUrl: './post-list.html',
-  styleUrl: './post-list.scss'
+  styleUrl: './post-list.scss',
 })
 export class PostList {
   postService = inject(PostService);
-  
-  
 }

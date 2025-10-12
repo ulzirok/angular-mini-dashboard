@@ -1,14 +1,32 @@
 <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
   <div class="form__item">
-    <input formControlName="email" type="text" placeholder="Электронный адрес" name="email">
-    <p *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error-text"><small>Введите действительный эл. адрес</small></p>
+    <input formControlName="email" type="text" placeholder="Электронный адрес" name="email" />
+    <p
+      *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+      class="error-text"
+    >
+      <small>Введите действительный эл. адрес</small>
+    </p>
   </div>
   <div class="form__item">
-    <input formControlName="fakePassword" type="fakePassword" placeholder="Пароль" name="fakePassword">
-    <p *ngIf="loginForm.get('fakePassword')?.invalid && loginForm.get('fakePassword')?.touched" class="error-text"><small>Пароль должен содержать хотя бы одну цифру, одну строчную букву, одну заглавную букву</small></p>
+    <input
+      formControlName="fakePassword"
+      type="fakePassword"
+      placeholder="Пароль"
+      name="fakePassword"
+    />
+    <p
+      *ngIf="loginForm.get('fakePassword')?.invalid && loginForm.get('fakePassword')?.touched"
+      class="error-text"
+    >
+      <small
+        >Пароль должен содержать хотя бы одну цифру, одну строчную букву, одну заглавную
+        букву</small
+      >
+    </p>
   </div>
 
   <button [disabled]="loginForm.invalid" type="submit" class="login">Вход</button>
-  
+
   <button type="button" routerLink="/auth/register" class="register">Регистрация</button>
 </form>

@@ -9,7 +9,7 @@
   gap: 15px;
 }
 
-.dashboard-inner>* {
+.dashboard-inner > * {
   width: 50%;
 }
 
@@ -18,7 +18,7 @@
     flex-direction: column;
   }
 
-  .dashboard-inner>* {
+  .dashboard-inner > * {
     width: 100%;
   }
 }

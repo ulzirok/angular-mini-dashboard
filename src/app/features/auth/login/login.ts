@@ -7,21 +7,21 @@ import { AuthService } from '../../../core/services/auth-service';
   selector: 'app-login',
   standalone: false,
   templateUrl: './login.html',
-  styleUrl: './login.scss'
+  styleUrl: './login.scss',
 })
 export class Login implements OnInit {
   constructor(
     private router: Router,
-    private authService: AuthService
-  ) { }
-  
-  loginForm!: FormGroup
-  
+    private authService: AuthService,
+  ) {}
+
+  loginForm!: FormGroup;
+
   ngOnInit(): void {
     this.loginForm = new FormGroup({
-      'email': new FormControl('', [Validators.required, Validators.email]),
-      'fakePassword': new FormControl('', [Validators.required])
-    })
+      email: new FormControl('', [Validators.required, Validators.email]),
+      fakePassword: new FormControl('', [Validators.required]),
+    });
   }
 
   submitLogin() {
@@ -38,5 +38,4 @@ export class Login implements OnInit {
       });
     }
   }
-  
 }

@@ -4,7 +4,13 @@
   <span></span>
 </button>
 
-<div role="button" tabindex="0" (click)="toggleMenu()" [class.active]="isMenuOpen" class="burger-menu">
+<div
+  role="button"
+  tabindex="0"
+  (click)="toggleMenu()"
+  [class.active]="isMenuOpen"
+  class="burger-menu"
+>
   <ul class="burger-menu__list">
     <li class="burger-menu__item"><a routerLink="dashboard">Dashboard</a></li>
     <li class="burger-menu__item"><a routerLink="profile">Профиль</a></li>
@@ -12,4 +18,3 @@
     <li class="burger-menu__item"><a routerLink="auth/login">Выйти</a></li>
   </ul>
 </div>
-

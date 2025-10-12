@@ -1,9 +1,32 @@
 <div class="modal active">
   <div class="modal__box">
     <button class="modal-close-btn" (click)="onClose()">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-castom">
-        <line x1="18" y1="6" x2="6" y2="18" stroke="black" stroke-width="2" stroke-linecap="round" />
-        <line x1="6" y1="6" x2="18" y2="18" stroke="black" stroke-width="2" stroke-linecap="round" />
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="svg-castom"
+      >
+        <line
+          x1="18"
+          y1="6"
+          x2="6"
+          y2="18"
+          stroke="black"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+        <line
+          x1="6"
+          y1="6"
+          x2="18"
+          y2="18"
+          stroke="black"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
       </svg>
     </button>
 
@@ -13,6 +36,5 @@
       <button class="save" (click)="onUpdate()">Опубликовать</button>
       <button class="cancel" routerLink="/dashboard" type="button">Отмена</button>
     </div>
-
   </div>
 </div>
