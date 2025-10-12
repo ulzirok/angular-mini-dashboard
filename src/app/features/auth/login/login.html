@@ -4,8 +4,8 @@
     <p *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error-text"><small>Введите действительный эл. адрес</small></p>
   </div>
   <div class="form__item">
-    <input formControlName="password" type="password" placeholder="Пароль" name="password">
-    <p *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error-text"><small>Пароль должен содержать хотя бы одну цифру, одну строчную букву, одну заглавную букву</small></p>
+    <input formControlName="fakePassword" type="fakePassword" placeholder="Пароль" name="fakePassword">
+    <p *ngIf="loginForm.get('fakePassword')?.invalid && loginForm.get('fakePassword')?.touched" class="error-text"><small>Пароль должен содержать хотя бы одну цифру, одну строчную букву, одну заглавную букву</small></p>
   </div>
 
   <button [disabled]="loginForm.invalid" type="submit" class="login">Вход</button>
