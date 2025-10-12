@@ -11,7 +11,6 @@ nav {
   font-size: 16px;
   font-weight: 600;
   color: var(--color-dark-blue);
-  
 }
 
 .logo span {
@@ -23,7 +22,7 @@ nav {
   cursor: pointer;
   transition: 0.3s;
   transform: scale(1);
-  
+
   &:hover {
     color: var(--color-white);
     transform: scale(1.07);
@@ -59,5 +58,17 @@ app-burger-menu {
 
   ul {
     display: none;
+  }
+}
+
+.logout-link {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+
+  &:hover {
+    color: var(--color-white);
   }
 }

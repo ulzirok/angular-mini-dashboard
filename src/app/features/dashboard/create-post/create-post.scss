@@ -32,7 +32,9 @@ textarea {
   line-height: 1.5;
   background-color: var(--color-white);
   color: var(--color-dark-blue);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 textarea:focus {
@@ -50,7 +52,7 @@ button {
   padding: 0 20px;
   background-color: var(--color-green);
   width: 100%;
-  
+
   &:hover {
     background-color: #069348;
   }

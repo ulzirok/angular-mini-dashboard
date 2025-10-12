@@ -7,24 +7,24 @@ import { Router } from '@angular/router';
   selector: 'app-register',
   standalone: false,
   templateUrl: './register.html',
-  styleUrl: './register.scss'
+  styleUrl: './register.scss',
 })
-export class Register implements OnInit{
-  registerForm!: FormGroup
+export class Register implements OnInit {
+  registerForm!: FormGroup;
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router
-  ) { }
-  
+    private router: Router,
+  ) {}
+
   ngOnInit(): void {
     this.registerForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      fakePassword: ['', [Validators.required]]
-    })
+      fakePassword: ['', [Validators.required]],
+    });
   }
-  
+
   submitRegister() {
     if (this.registerForm.invalid) return;
 
@@ -37,7 +37,7 @@ export class Register implements OnInit{
         } else {
           alert('Ошибка регистрации');
         }
-      }
+      },
     });
   }
 }

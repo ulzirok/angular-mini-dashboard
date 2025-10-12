@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-burger-menu',
   standalone: false,
   templateUrl: './burger-menu.html',
-  styleUrl: './burger-menu.scss'
+  styleUrl: './burger-menu.scss',
 })
 export class BurgerMenu {
   isMenuOpen = false;

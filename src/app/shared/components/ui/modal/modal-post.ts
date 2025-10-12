@@ -6,22 +6,26 @@ import { IPostInfo } from '../../../../models/postInfo-model';
   selector: 'app-modal-post',
   standalone: false,
   templateUrl: './modal-post.html',
-  styleUrl: './modal-post.scss'
+  styleUrl: './modal-post.scss',
 })
 export class ModalPost {
-  postService = inject(PostService)
-  @Output() close = new EventEmitter();
-  @Output() update = new EventEmitter()
-  @Input() post?: IPostInfo = this.post
-  editedText = ''
+  postService = inject(PostService);
+  @Output() closeBtn = new EventEmitter();
+  @Output() update = new EventEmitter();
+  @Input() post?: IPostInfo = this.post;
+  editedText = '';
 
   onClose() {
-    this.close.emit();
+    this.closeBtn.emit();
   }
-  
+
   onUpdate() {
-    const updatedPost = { ...this.post, text: this.editedText, updatedAt: new Date().toISOString() }
-    this.update.emit(updatedPost)
-    this.onClose()
+    const updatedPost = {
+      ...this.post,
+      text: this.editedText,
+      updatedAt: new Date().toISOString(),
+    };
+    this.update.emit(updatedPost);
+    this.onClose();
   }
 }

@@ -1,23 +1,46 @@
 <div class="profile__container">
   <div class="container">
     <div class="profile__inner">
-      
       <div class="profile">
         @if (user?.photo) {
-          <img [src]="user?.photo" accept="image/*" alt="Фото для аватара" width="150" height="150" class="image">
+          <img
+            [src]="user?.photo"
+            accept="image/*"
+            alt="Фото для аватара"
+            width="150"
+            height="150"
+            class="image"
+          />
         } @else {
-          <img src="../../../assets/images/user.png" alt="Фото для аватара" width="150" height="150" class="image">
+          <img
+            src="../../../assets/images/user.png"
+            alt="Фото для аватара"
+            width="150"
+            height="150"
+            class="image"
+          />
         }
         <div class="profile__info">
-          <h2 class="title">ФИО: <span>{{userService.user()?.name}}</span> 👤</h2>
-          <p class="title">Почта: <span>{{userService.user()?.email}}</span> 📧</p>
-          <p *ngIf="user?.about" class="title">О себе: <span>{{userService.user()?.about}}</span></p>
+          <h2 class="title">
+            ФИО: <span>{{ userService.user()?.name }}</span> 👤
+          </h2>
+          <p class="title">
+            Почта: <span>{{ userService.user()?.email }}</span> 📧
+          </p>
+          <p *ngIf="user?.about" class="title">
+            О себе: <span>{{ userService.user()?.about }}</span>
+          </p>
         </div>
       </div>
-      
+
       <button (click)="openModal()">Редактировать профиль</button>
-      
-      <app-modal-profile *ngIf="isEditModalOpen" (close)="closeModal()" [user]="user" (update)="updateProfile($event)"></app-modal-profile>
+
+      <app-modal-profile
+        *ngIf="isEditModalOpen"
+        (closeBtn)="closeModal()"
+        [user]="user"
+        (update)="updateProfile($event)"
+      ></app-modal-profile>
     </div>
   </div>
 </div>

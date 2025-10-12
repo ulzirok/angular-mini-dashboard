@@ -2,22 +2,17 @@
   <div class="container">
     <nav>
       <div class="logo" routerLink="dashboard">
-        <span class="material-symbols-outlined">
-          home
-        </span>
+        <span class="material-symbols-outlined"> home </span>
       </div>
-        
+
       <ul>
         <li><a routerLink="dashboard">Dashboard</a></li>
         <li><a routerLink="profile">Профиль</a></li>
         <li><a routerLink="admin">Админ</a></li>
-        <li><a (click)="logout()">Выйти</a></li>
+        <li><button (click)="logout()" class="logout-link">Выйти</button></li>
       </ul>
-        
+
       <app-burger-menu></app-burger-menu>
     </nav>
   </div>
 </div>
- 
-
-

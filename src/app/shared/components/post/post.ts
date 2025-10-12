@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { PostService } from '../../../core/services/post-service';
-import { IPost } from '../../../models/post-model';
 import { IPostInfo } from '../../../models/postInfo-model';
 import { UserService } from '../../../core/services/user-service';
 
@@ -8,23 +7,22 @@ import { UserService } from '../../../core/services/user-service';
   selector: 'app-post',
   standalone: false,
   templateUrl: './post.html',
-  styleUrls: ['./post.scss']
+  styleUrls: ['./post.scss'],
 })
 export class Post {
-  postService = inject(PostService)
-  userService = inject(UserService)
-  
-  deletePost(id: number) {
-    this.postService.deletePost(id)
-  }
-  
-  updatePost(post: IPostInfo) {
-    this.postService.updatePost(post)
-  }
-  
-  isEditModalOpen: boolean = false;
-  openModal() {
+  postService = inject(PostService);
+  userService = inject(UserService);
 
+  deletePost(id: number) {
+    this.postService.deletePost(id);
+  }
+
+  updatePost(post: IPostInfo) {
+    this.postService.updatePost(post);
+  }
+
+  isEditModalOpen = false;
+  openModal() {
     this.isEditModalOpen = true;
     // document.body.classList.add('lock');
   }

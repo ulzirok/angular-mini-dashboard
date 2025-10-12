@@ -1,3 +1,3 @@
 export interface IPost {
-  text: string
+  text: string;
 }

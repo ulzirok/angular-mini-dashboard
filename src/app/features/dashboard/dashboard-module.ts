@@ -6,22 +6,16 @@ import { Dashboard } from './dashboard';
 import { CreatePost } from './create-post/create-post';
 import { PostList } from './post-list/post-list';
 import { SharedModule } from '../../shared/shared-module';
-import { ReactiveFormsModule, ɵInternalFormsSharedModule } from "@angular/forms";
-
-
+import { ReactiveFormsModule, ɵInternalFormsSharedModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    Dashboard,
-    CreatePost,
-    PostList
-  ],
+  declarations: [Dashboard, CreatePost, PostList],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     SharedModule,
     ɵInternalFormsSharedModule,
-    ReactiveFormsModule
-]
+    ReactiveFormsModule,
+  ],
 })
-export class DashboardModule { }
+export class DashboardModule {}

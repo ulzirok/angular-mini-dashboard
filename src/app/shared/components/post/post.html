@@ -1,19 +1,28 @@
 <div class="post">
-  @for(post of postService.posts(); track post.id) {
-    <p class="title">Автор: <span>{{post.author}}</span></p>
-    <p class="title">Дата публикации: 
-      <span>{{post.date | date: 'short'}}</span>
+  @for (post of postService.posts(); track post.id) {
+    <p class="title">
+      Автор: <span>{{ post.author }}</span>
+    </p>
+    <p class="title">
+      Дата публикации:
+      <span>{{ post.date | date: 'short' }}</span>
       <small *ngIf="post.updatedAt" class="edited">
         (Изменено: <span>{{ post.updatedAt | date: 'short' }})</span>
       </small>
     </p>
-    <p class="title">Пост: <span>{{post.text}}</span></p>
-    
+    <p class="title">
+      Пост: <span>{{ post.text }}</span>
+    </p>
+
     <div class="buttons">
       <button class="update" (click)="openModal()">Редактировать</button>
       <button class="delete" type="submit" (click)="deletePost(post.id)">Удалить</button>
-      <app-modal-post *ngIf="isEditModalOpen" (close)="closeModal()" [post]="post" (update)="updatePost($event)"></app-modal-post>
+      <app-modal-post
+        *ngIf="isEditModalOpen"
+        (closeBtn)="closeModal()"
+        [post]="post"
+        (update)="updatePost($event)"
+      ></app-modal-post>
     </div>
   }
-  
 </div>

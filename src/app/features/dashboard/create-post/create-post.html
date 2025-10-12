@@ -2,8 +2,12 @@
   <h2 class="title">Создать публикацию</h2>
   <form [formGroup]="createPostForm" (ngSubmit)="submitPost()">
     <textarea formControlName="text" placeholder="Что у Вас нового?"></textarea>
-    <p *ngIf="createPostForm.get('text')?.invalid && createPostForm.get('text')?.touched" class="error-text">
-      <small>Поле не может быть пустым</small></p>
+    <p
+      *ngIf="createPostForm.get('text')?.invalid && createPostForm.get('text')?.touched"
+      class="error-text"
+    >
+      <small>Поле не может быть пустым</small>
+    </p>
     <button [disabled]="createPostForm.invalid" type="submit">Опубликовать</button>
   </form>
 </div>
