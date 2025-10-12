@@ -1,33 +1,6 @@
 {
   "users": [
-    {
-      "id": "ebae",
-      "name": "User User",
-      "email": "user@mail.com",
-      "password": "123QWEasd",
-      "token": "qoefm9wgmb9"
-    },
-    {
-      "id": "b705",
-      "name": "Admin Admin",
-      "email": "admin@mail.com",
-      "password": "123qweASD",
-      "token": "1317ffyp78v"
-    },
-    {
-      "id": "6974",
-      "name": "Another User",
-      "email": "another@mail.ru",
-      "password": "123asdQ",
-      "token": "4ozihjq6yrb"
-    },
-    {
-      "id": "198c",
-      "name": "wer",
-      "email": "qwsdf@dfg.fds",
-      "password": "123Qasd",
-      "token": "lstx30tqf5"
-    }
+    
   ],
   "posts": [
     {

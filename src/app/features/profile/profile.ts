@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { UserService } from '../../core/services/user-service';
+import { IUser } from '../../models/userInfo-model';
 
 @Component({
   selector: 'app-profile',
@@ -10,20 +11,32 @@ import { UserService } from '../../core/services/user-service';
 export class Profile implements OnInit {
   userService = inject(UserService)
   isEditModalOpen: boolean = false;
+  user!: IUser | null
   
   ngOnInit(): void {
-    this.userService.user()
+    // this.userService.user()
+    this.user = this.userService.user()
+  }
+  
+  updateProfile(user: IUser) {
+    this.userService.updateProfile(user).subscribe({
+      next: (updatedUser) => {
+        this.user = updatedUser;
+        alert('Редактирование успешно завершена')
+        this.isEditModalOpen = false;
+      },
+      error: (err) => {
+        console.error('Ошибка при обновлении профиля:', err);
+      }
+    });
   }
 
   openModal() {
-    
     this.isEditModalOpen = true
-    // document.body.classList.add('lock');
   }
   
   closeModal() {
     this.isEditModalOpen = false
-    // document.body.classList.remove('lock');
   }
   
 }

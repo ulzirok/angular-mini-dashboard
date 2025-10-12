@@ -9,13 +9,18 @@
     </button>
     
     <h2>Редактирование профиля:</h2>
-    <input type="text" placeholder="Изменить ФИО">
-    <input type="text" placeholder="Изменить email">
-    <input type="file">
-    <div class="buttons">
-      <button class="save">Сохранить</button>
-      <button class="cancel">Отмена</button>
-    </div>
+    <form [formGroup]="formUpdating" (ngSubmit)="onUpdate()">
+      <input formControlName="name" type="text" placeholder="Изменить ФИО">
+      <p *ngIf="formUpdating.get('name')?.invalid && formUpdating.get('name')?.touched" class="error-text">Поле не может быть пустым</p>
+      <input formControlName="email" type="email" placeholder="Введите ваш эл. адресс">
+      <p *ngIf="formUpdating.get('email')?.invalid && formUpdating.get('email')?.touched" class="error-text">Введите действительный эл. адрес</p>
+      <textarea formControlName="about" name="text" placeholder="Расскажите о себе"></textarea>
+      <input type="file" (change)="onFileSelected($event)">
+      <div class="buttons">
+        <button type="submit" class="save">Сохранить</button>
+        <button [disabled]="formUpdating.invalid" (click)="onClose()" type="button" class="cancel">Отмена</button>
+      </div>
+    </form>
     
   </div>
 </div>
