@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { ModalProfile } from './components/ui/modal/modal-profile';
 import { ModalPost } from './components/ui/modal/modal-post';
 import { DashboardRoutingModule } from '../features/dashboard/dashboard-routing-module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -22,8 +22,9 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     RouterModule,
     DashboardRoutingModule,
-    FormsModule
-  ],
+    FormsModule,
+    ReactiveFormsModule
+],
   exports: [
     Post,
     BurgerMenu,

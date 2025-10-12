@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { PostService } from '../../../core/services/post-service';
 import { IPost } from '../../../models/post-model';
 import { IPostInfo } from '../../../models/postInfo-model';
+import { UserService } from '../../../core/services/user-service';
 
 @Component({
   selector: 'app-post',
@@ -11,6 +12,7 @@ import { IPostInfo } from '../../../models/postInfo-model';
 })
 export class Post {
   postService = inject(PostService)
+  userService = inject(UserService)
   
   deletePost(id: number) {
     this.postService.deletePost(id)

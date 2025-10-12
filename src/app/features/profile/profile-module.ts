@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { ProfileRoutingModule } from './profile-routing-module';
 import { Profile } from './profile';
 import { SharedModule } from '../../shared/shared-module';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -14,7 +16,9 @@ import { SharedModule } from '../../shared/shared-module';
   imports: [
     CommonModule,
     ProfileRoutingModule,
-    SharedModule
+    SharedModule,
+    RouterModule,
+    FormsModule
   ]
 })
 export class ProfileModule { }
