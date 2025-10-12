@@ -15,6 +15,8 @@ export class Header {
   ) {}
 
   logout() {
+    const isConfirmed = confirm('Вы уверены, что хотите покинуть страницу?');
+    if (!isConfirmed) return;
     this.authService.logout();
     this.router.navigate(['/auth/login']);
   }

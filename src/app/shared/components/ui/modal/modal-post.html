@@ -34,7 +34,7 @@
     <textarea [(ngModel)]="editedText" placeholder="Редактирование поста..."></textarea>
     <div class="buttons">
       <button class="save" (click)="onUpdate()">Опубликовать</button>
-      <button class="cancel" routerLink="/dashboard" type="button">Отмена</button>
+      <button class="cancel" (click)="onClose()" type="button">Отмена</button>
     </div>
   </div>
 </div>

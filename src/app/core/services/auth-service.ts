@@ -57,10 +57,12 @@ export class AuthService {
       }),
       switchMap((userToAdd) =>
         this.http.post<IUser>(this.url, userToAdd).pipe(
-          tap(() => {
-            this.setUser(JSON.stringify(newUser));
-            this.userService.loginedUser(newUser);
-            this.setToken(userToAdd.token);
+          tap((response) => {
+            this.setUser(JSON.stringify(response));
+            this.userService.loginedUser(response);
+            if (response.token) {
+              this.setToken(response.token);
+            }
             this.router.navigate(['/dashboard']);
           }),
         ),

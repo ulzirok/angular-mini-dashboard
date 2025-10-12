@@ -49,18 +49,11 @@
       <textarea formControlName="about" name="text" placeholder="Расскажите о себе"></textarea>
       <input type="file" (change)="onFileSelected($event)" />
       <div class="buttons">
-        <button type="submit" class="save">Сохранить</button>
-        <button [disabled]="formUpdating.invalid" (click)="onClose()" type="button" class="cancel">
+        <button [disabled]="formUpdating.invalid" type="submit" class="save">Сохранить</button>
+        <button type="button" (click)="$event.preventDefault(); onClose()" class="cancel">
           Отмена
         </button>
       </div>
     </form>
   </div>
 </div>
-
-<!-- <div class="modal" *ngIf="isEditModalOpen">
-  <input type="text" [(ngModel)]="editUser.name">
-  <input type="file" (change)="onFileSelected($event)">
-  <button (click)="saveChanges()">Сохранить</button>
-  <button (click)="closeModal()">Отмена</button>
-</div> -->

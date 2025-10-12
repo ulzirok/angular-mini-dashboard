@@ -13,7 +13,7 @@ export class ModalProfile implements OnInit {
   fb = inject(FormBuilder);
   selectedPhoto: string | null = null;
   @Input() user!: IUser | null;
-  @Output() closeBtn = new EventEmitter();
+  @Output() closeBtn = new EventEmitter<void>();
   @Output() update = new EventEmitter();
 
   ngOnInit(): void {
