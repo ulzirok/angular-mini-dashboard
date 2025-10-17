@@ -34,22 +34,16 @@
 
 ## Скриншоты проекта
 
-### Страница входа
 ![Главная страница](./screenshots/dashboard-login.jpg)
 
-### Страница регистрации
 ![Страница входа](./screenshots/dashboard-registration.jpg)
 
-### Страница для публикации поста
 ![Онлайн-чат](./screenshots/dashboard-main.jpg)
 
-### Страница для редактирования поста
 ![Онлайн-чат](./screenshots/dashboard-edit-post.jpg)
 
-### Страница профиля
 ![Онлайн-чат](./screenshots/dashboard-profile.jpg)
 
-### Страница для редактирования профиля
 ![Онлайн-чат](./screenshots/dashboard-edit-profile.jpg)
 
 
